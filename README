@@ -1,0 +1,9 @@
+KARBAN - simple accounting
+==========================
+
+This project aims to create a really basic accounting system for freelancers and small companies.
+Its main goals are:
+- Usability
+- Straight forward, hackable design
+
+KARBAN is written in PHP and published under Gnu General Public Licencse version 3.
