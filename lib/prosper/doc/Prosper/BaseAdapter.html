@@ -1,0 +1,1786 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+   <html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Docs For Class BaseAdapter</title>
+  <link rel="stylesheet" href="../media/stylesheet.css" />
+  <script src="../media/lib/classTree.js"></script>
+<link id="webfx-tab-style-sheet" type="text/css" rel="stylesheet" href="../media/lib/tab.webfx.css" />
+<script type="text/javascript" src="../media/lib/tabpane.js"></script>
+  <script language="javascript" type="text/javascript" src="../media/lib/ua.js"></script>
+<script language="javascript" type="text/javascript">
+	var imgPlus = new Image();
+	var imgMinus = new Image();
+	imgPlus.src = "../media/images/plus.gif";
+	imgMinus.src = "../media/images/minus.gif";
+	
+	function showNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgMinus.src;
+		oTable.style.display = "block";
+	}
+	
+	function hideNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgPlus.src;
+		oTable.style.display = "none";
+	}
+	
+	function nodeIsVisible(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+        		break;
+        }
+		return (oTable && oTable.style.display == "block");
+	}
+	
+	function toggleNodeVisibility(Node){
+		if (nodeIsVisible(Node)){
+			hideNode(Node);
+		}else{
+			showNode(Node);
+		}
+	}
+</script>
+<!-- template designed by Julien Damon based on PHPEdit's generated templates, and tweaked by Greg Beaver -->
+<body bgcolor="#ffffff" ><!-- Start of Class Data -->
+<h2>
+	Class BaseAdapter
+</h2> (line <span class="linenumber"><a href="../__filesource/fsource_Prosper__adaptersBaseAdapter.php.html#a10">10</a></span>)
+<div class="tab-pane" id="tabPane1">
+<script type="text/javascript">
+tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ));
+</script>
+
+<div class="tab-page" id="Description">
+<h2 class="tab">Description</h2>
+<pre>
+</pre>
+<p>
+	<b><i>Located in File: <a href="_adapters---BaseAdapter.php.html">/adapters/BaseAdapter.php</a></i></b><br>
+</p>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Base Adapter all SQL adapters are based off of</h5>
+<ul>
+		<li><strong>abstract:</strong> - </li>
+	</ul>
+<br /><hr />
+<span class="type">Classes extended from BaseAdapter:</span>
+ 		<dl>
+	<dt><a href="../Prosper/DBaseAdapter.html">DBaseAdapter</a></dt>
+		<dd>DBase Database Adapter</dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/FrontBaseAdapter.html">FrontBaseAdapter</a></dt>
+		<dd>FrontBase Database Adapter</dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/InformixAdapter.html">InformixAdapter</a></dt>
+		<dd>Informix Database Adapter</dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/MSqlAdapter.html">MSqlAdapter</a></dt>
+		<dd>MSQL Database Adapter</dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/MSSqlAdapter.html">MSSqlAdapter</a></dt>
+		<dd>Microsoft SQL Server Database Adapter</dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/MySqlOldAdapter.html">MySqlOldAdapter</a></dt>
+		<dd>MySql Old Database Adapter</dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/ParadoxAdapter.html">ParadoxAdapter</a></dt>
+		<dd>Paradox Database Adapter</dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/PreparedAdapter.html">PreparedAdapter</a></dt>
+		<dd>The PreparedAdapter class should be extended by any adapter that supports</dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/SqliteAdapter.html">SqliteAdapter</a></dt>
+		<dd>Sqlite Database Adapter</dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/SybaseAdapter.html">SybaseAdapter</a></dt>
+		<dd>Sybase Database Adapter</dd>
+	</dl>
+	</p>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "Description" ) );</script>
+<div class="tab-page" id="tabPage1">
+
+<h2 class="tab">Class Variables</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="var-title">
+    static <span class="var-type">mixed</span>
+    <a href="#var$connection" title="details" class="property"><strong>$connection</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$hostname" title="details" class="property"><strong>$hostname</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$password" title="details" class="property"><strong>$password</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$schema" title="details" class="property"><strong>$schema</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$username" title="details" class="property"><strong>$username</strong></a>
+</div>
+<hr />
+<a name="var$connection" id="var$connection"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">static $connection</strong> (line <span class="linenumber"><a href="../__filesource/fsource_Prosper__adaptersBaseAdapter.php.html#a12">12</a></span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+		<li><strong>access:</strong> - protected</li>
+	</ul>
+</div>
+<a name="var$hostname" id="var$hostname"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$hostname</strong> (line <span class="linenumber"><a href="../__filesource/fsource_Prosper__adaptersBaseAdapter.php.html#a15">15</a></span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+		<li><strong>access:</strong> - protected</li>
+	</ul>
+</div>
+<a name="var$password" id="var$password"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$password</strong> (line <span class="linenumber"><a href="../__filesource/fsource_Prosper__adaptersBaseAdapter.php.html#a14">14</a></span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+		<li><strong>access:</strong> - protected</li>
+	</ul>
+</div>
+<a name="var$schema" id="var$schema"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$schema</strong> (line <span class="linenumber"><a href="../__filesource/fsource_Prosper__adaptersBaseAdapter.php.html#a16">16</a></span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+		<li><strong>access:</strong> - protected</li>
+	</ul>
+</div>
+<a name="var$username" id="var$username"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$username</strong> (line <span class="linenumber"><a href="../__filesource/fsource_Prosper__adaptersBaseAdapter.php.html#a13">13</a></span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+		<li><strong>access:</strong> - protected</li>
+	</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage1" ) );</script>
+</div>
+<div class="tab-page" id="constantsTabpage">
+
+<h2 class="tab">Class Constants</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<hr />
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "constantsTabpage" ) );</script>
+</div>
+<div class="tab-page" id="tabPage2">
+<h2 class="tab">Method Detail</h2>
+<!-- ============ METHOD DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="method-summary">
+    <div class="method-definition">
+            <span class="method-result">New</span>
+        <a href="#method__construct" title="details" class="method-name">__construct</a>
+        (<span class="var-type">string</span>&nbsp;<span class="var-name">$username</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$password</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$hostname</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$schema</span>, [<span class="var-type">bool</span>&nbsp;<span class="var-name">$lazy</span> = <span class="var-default">true</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#method__destruct" title="details" class="method-name">__destruct</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodaddslashes" title="details" class="method-name">addslashes</a>
+        (<span class="var-type">string</span>&nbsp;<span class="var-name">$str</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">int</span>
+        <a href="#methodaffected_rows" title="details" class="method-name">affected_rows</a>
+        (<span class="var-type">mixed</span>&nbsp;<span class="var-name">$set</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodbegin" title="details" class="method-name">begin</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodcommit" title="details" class="method-name">commit</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodconnect" title="details" class="method-name">connect</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">mixed</span>
+        <a href="#methodconnection" title="details" class="method-name">connection</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">array</span>
+        <a href="#methodcross_type" title="details" class="method-name">cross_type</a>
+        (<span class="var-type">array</span>&nbsp;<span class="var-name">$platform</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methoddisconnect" title="details" class="method-name">disconnect</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodend" title="details" class="method-name">end</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodescape" title="details" class="method-name">escape</a>
+        (<span class="var-type">string</span>&nbsp;<span class="var-name">$str</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">mixed</span>
+        <a href="#methodexecute" title="details" class="method-name">execute</a>
+        (<span class="var-type">string</span>&nbsp;<span class="var-name">$sql</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$mode</span> = <span class="var-default">Query::SELECT_STMT</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">mixed</span>
+        <a href="#methodfalse_value" title="details" class="method-name">false_value</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">array</span>
+        <a href="#methodfetch_assoc" title="details" class="method-name">fetch_assoc</a>
+        (<span class="var-type">mixed</span>&nbsp;<span class="var-name">$set</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">nothing</span>
+        <a href="#methodfree_result" title="details" class="method-name">free_result</a>
+        (<span class="var-type">mixed</span>&nbsp;<span class="var-name">$set</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">bool</span>
+        <a href="#methodhas_transactions" title="details" class="method-name">has_transactions</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">int</span>
+        <a href="#methodinsert_id" title="details" class="method-name">insert_id</a>
+        (<span class="var-type">mixed</span>&nbsp;<span class="var-name">$set</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">sql</span>
+        <a href="#methodlimit" title="details" class="method-name">limit</a>
+        (<span class="var-type">string</span>&nbsp;<span class="var-name">$sql</span>, <span class="var-type">int</span>&nbsp;<span class="var-name">$limit</span>, <span class="var-type">int</span>&nbsp;<span class="var-name">$offset</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodmktime" title="details" class="method-name">mktime</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$timestamp</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodmodulus" title="details" class="method-name">modulus</a>
+        (<span class="var-type">string</span>&nbsp;<span class="var-name">$lhs</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$rhs</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">mixed</span>
+        <a href="#methodplatform_execute" title="details" class="method-name">platform_execute</a>
+        (<span class="var-type">string</span>&nbsp;<span class="var-name">$sql</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$mode</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">array</span>
+        <a href="#methodplatform_type" title="details" class="method-name">platform_type</a>
+        (<span class="var-type">array</span>&nbsp;<span class="var-name">$cross</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">quoted</span>
+        <a href="#methodquote" title="details" class="method-name">quote</a>
+        (<span class="var-type">string</span>&nbsp;<span class="var-name">$str</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">nothing</span>
+        <a href="#methodrebind" title="details" class="method-name">rebind</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$bindings</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodrollback" title="details" class="method-name">rollback</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">array</span>
+        <a href="#methodtables" title="details" class="method-name">tables</a>
+        ([<span class="var-type">array</span>&nbsp;<span class="var-name">$filter</span> = <span class="var-default">null</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtimestamp" title="details" class="method-name">timestamp</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$timestamp</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">mixed</span>
+        <a href="#methodtrue_value" title="details" class="method-name">true_value</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">array</span>
+        <a href="#methodtype_array" title="details" class="method-name">type_array</a>
+        (<span class="var-type">string</span>&nbsp;<span class="var-name">$raw</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$split</span> = <span class="var-default">'('</span>])
+        </div>
+</div>
+<hr />
+<A NAME='method_detail'></A>
+
+
+<a name="method__construct" id="method__construct"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/Constructor.gif" border="0" /> <strong class="method">Constructor __construct</strong> (line <span class="linenumber"><a href="../__filesource/fsource_Prosper__adaptersBaseAdapter.php.html#a27">27</a></span>)
+ </h4> 
+<h4><i>New</i> <strong>__construct(
+string
+$username, string
+$password, string
+$hostname, string
+$schema, [bool
+$lazy = true])</strong></h4>
+	<p>Overridden in child classes as:<br />
+		<dl>
+	<dt><a href="../Prosper/PreparedAdapter.html#method__construct">PreparedAdapter::__construct()</a></dt>
+		<dd>Initializes the prepared statement adapter and then passes things off to BaseAdapter</dd>
+	</dl>
+	</p>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Creates a new adapter instance</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $username</strong>: Database username</li>
+			<li><strong>string $password</strong>: Database password</li>
+			<li><strong>string $hostname</strong>: Database hostname</li>
+			<li><strong>string $schema</strong>: Database schema</li>
+			<li><strong>bool $lazy</strong>: [optional] Lazy loading, defaults to true</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - Adapter Instance</li>
+		</ul>
+</div>
+<a name="method__destruct" id="method__destruct"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/Destructor.gif" border="0" /> <strong class="method">Destructor __destruct</strong> (line <span class="linenumber"><a href="../__filesource/fsource_Prosper__adaptersBaseAdapter.php.html#a41">41</a></span>)
+ </h4> 
+<h4><i>void</i> <strong>__destruct(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Destroys an adapter instance</h5>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodaddslashes" id="methodaddslashes"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method addslashes</strong> (line <span class="linenumber"><a href="../__filesource/fsource_Prosper__adaptersBaseAdapter.php.html#a90">90</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>addslashes(
+string
+$str)</strong></h4>
+	<p>Overridden in child classes as:<br />
+		<dl>
+	<dt><a href="../Prosper/MSSqlAdapter.html#methodaddslashes">MSSqlAdapter::addslashes()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/MySqlOldAdapter.html#methodaddslashes">MySqlOldAdapter::addslashes()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/DB2Adapter.html#methodaddslashes">DB2Adapter::addslashes()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/IngresAdapter.html#methodaddslashes">IngresAdapter::addslashes()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/MaxDBAdapter.html#methodaddslashes">MaxDBAdapter::addslashes()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/MSSqlNativeAdapter.html#methodaddslashes">MSSqlNativeAdapter::addslashes()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/MySqlAdapter.html#methodaddslashes">MySqlAdapter::addslashes()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/PostgreSqlAdapter.html#methodaddslashes">PostgreSqlAdapter::addslashes()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/SqliteAdapter.html#methodaddslashes">SqliteAdapter::addslashes()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/SybaseAdapter.html#methodaddslashes">SybaseAdapter::addslashes()</a></dt>
+		<dd></dd>
+	</dl>
+	</p>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Wrapper for the adapters add slashes function, defaults to using php's</h5>
+<div class="desc"><p>addslashes built-in</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $str</strong>: string to add slashes too</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - escaped string</li>
+		</ul>
+</div>
+<a name="methodaffected_rows" id="methodaffected_rows"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method affected_rows</strong> (line <span class="linenumber"><a href="../__filesource/fsource_Prosper__adaptersBaseAdapter.php.html#a198">198</a></span>)
+ </h4> 
+<h4><i>int</i> <strong>affected_rows(
+mixed
+$set)</strong></h4>
+	<p>Overridden in child classes as:<br />
+		<dl>
+	<dt><a href="../Prosper/DBaseAdapter.html#methodaffected_rows">DBaseAdapter::affected_rows()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/FrontBaseAdapter.html#methodaffected_rows">FrontBaseAdapter::affected_rows()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/InformixAdapter.html#methodaffected_rows">InformixAdapter::affected_rows()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/MSqlAdapter.html#methodaffected_rows">MSqlAdapter::affected_rows()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/MSSqlAdapter.html#methodaffected_rows">MSSqlAdapter::affected_rows()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/MySqlOldAdapter.html#methodaffected_rows">MySqlOldAdapter::affected_rows()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/DB2Adapter.html#methodaffected_rows">DB2Adapter::affected_rows()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/FirebirdAdapter.html#methodaffected_rows">FirebirdAdapter::affected_rows()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/IngresAdapter.html#methodaffected_rows">IngresAdapter::affected_rows()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/MaxDBAdapter.html#methodaffected_rows">MaxDBAdapter::affected_rows()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/MSSqlNativeAdapter.html#methodaffected_rows">MSSqlNativeAdapter::affected_rows()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/MySqlAdapter.html#methodaffected_rows">MySqlAdapter::affected_rows()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/OracleAdapter.html#methodaffected_rows">OracleAdapter::affected_rows()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/OvrimosAdapter.html#methodaffected_rows">OvrimosAdapter::affected_rows()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/PostgreSqlAdapter.html#methodaffected_rows">PostgreSqlAdapter::affected_rows()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/SqliteAdapter.html#methodaffected_rows">SqliteAdapter::affected_rows()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/SybaseAdapter.html#methodaffected_rows">SybaseAdapter::affected_rows()</a></dt>
+		<dd></dd>
+	</dl>
+	</p>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Get the number of affected rows for a platform specific result object</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>mixed $set</strong>: Platform specific result set</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - number of rows affected</li>
+		</ul>
+</div>
+<a name="methodbegin" id="methodbegin"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method begin</strong> (line <span class="linenumber"><a href="../__filesource/fsource_Prosper__adaptersBaseAdapter.php.html#a117">117</a></span>)
+ </h4> 
+<h4><i>void</i> <strong>begin(
+)</strong></h4>
+	<p>Overridden in child classes as:<br />
+		<dl>
+	<dt><a href="../Prosper/FrontBaseAdapter.html#methodbegin">FrontBaseAdapter::begin()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/DB2Adapter.html#methodbegin">DB2Adapter::begin()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/FirebirdAdapter.html#methodbegin">FirebirdAdapter::begin()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/IngresAdapter.html#methodbegin">IngresAdapter::begin()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/MaxDBAdapter.html#methodbegin">MaxDBAdapter::begin()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/MSSqlNativeAdapter.html#methodbegin">MSSqlNativeAdapter::begin()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/MySqlAdapter.html#methodbegin">MySqlAdapter::begin()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/OracleAdapter.html#methodbegin">OracleAdapter::begin()</a></dt>
+		<dd></dd>
+	</dl>
+	</p>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Begins a transaction, if the adapter doesn't support transactions, this is a no-op</h5>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodcommit" id="methodcommit"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method commit</strong> (line <span class="linenumber"><a href="../__filesource/fsource_Prosper__adaptersBaseAdapter.php.html#a124">124</a></span>)
+ </h4> 
+<h4><i>void</i> <strong>commit(
+)</strong></h4>
+	<p>Overridden in child classes as:<br />
+		<dl>
+	<dt><a href="../Prosper/FrontBaseAdapter.html#methodcommit">FrontBaseAdapter::commit()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/DB2Adapter.html#methodcommit">DB2Adapter::commit()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/FirebirdAdapter.html#methodcommit">FirebirdAdapter::commit()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/IngresAdapter.html#methodcommit">IngresAdapter::commit()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/MaxDBAdapter.html#methodcommit">MaxDBAdapter::commit()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/MSSqlNativeAdapter.html#methodcommit">MSSqlNativeAdapter::commit()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/MySqlAdapter.html#methodcommit">MySqlAdapter::commit()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/OracleAdapter.html#methodcommit">OracleAdapter::commit()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/OvrimosAdapter.html#methodcommit">OvrimosAdapter::commit()</a></dt>
+		<dd></dd>
+	</dl>
+	</p>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Commits a transaction, if the adapter doesn't support transactions, this is a no-op</h5>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodconnect" id="methodconnect"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method connect</strong> (line <span class="linenumber"><a href="../__filesource/fsource_Prosper__adaptersBaseAdapter.php.html#a59">59</a></span>)
+ </h4> 
+<h4><i>void</i> <strong>connect(
+)</strong></h4>
+	<p>Overridden in child classes as:<br />
+		<dl>
+	<dt><a href="../Prosper/DBaseAdapter.html#methodconnect">DBaseAdapter::connect()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/FrontBaseAdapter.html#methodconnect">FrontBaseAdapter::connect()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/InformixAdapter.html#methodconnect">InformixAdapter::connect()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/MSqlAdapter.html#methodconnect">MSqlAdapter::connect()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/MSSqlAdapter.html#methodconnect">MSSqlAdapter::connect()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/MySqlOldAdapter.html#methodconnect">MySqlOldAdapter::connect()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/ParadoxAdapter.html#methodconnect">ParadoxAdapter::connect()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/DB2Adapter.html#methodconnect">DB2Adapter::connect()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/FirebirdAdapter.html#methodconnect">FirebirdAdapter::connect()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/IngresAdapter.html#methodconnect">IngresAdapter::connect()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/MaxDBAdapter.html#methodconnect">MaxDBAdapter::connect()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/MSSqlNativeAdapter.html#methodconnect">MSSqlNativeAdapter::connect()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/MySqlAdapter.html#methodconnect">MySqlAdapter::connect()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/OracleAdapter.html#methodconnect">OracleAdapter::connect()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/OvrimosAdapter.html#methodconnect">OvrimosAdapter::connect()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/PostgreSqlAdapter.html#methodconnect">PostgreSqlAdapter::connect()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/SqliteAdapter.html#methodconnect">SqliteAdapter::connect()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/SybaseAdapter.html#methodconnect">SybaseAdapter::connect()</a></dt>
+		<dd></dd>
+	</dl>
+	</p>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Create a connection to the database backend</h5>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>abstract</strong> - </li>
+		</ul>
+</div>
+<a name="methodconnection" id="methodconnection"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method connection</strong> (line <span class="linenumber"><a href="../__filesource/fsource_Prosper__adaptersBaseAdapter.php.html#a49">49</a></span>)
+ </h4> 
+<h4><i>mixed</i> <strong>connection(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Get the connection, lazy loads connection if necessary</h5>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - The connection to the database</li>
+		</ul>
+</div>
+<a name="methodcross_type" id="methodcross_type"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method cross_type</strong> (line <span class="linenumber"><a href="../__filesource/fsource_Prosper__adaptersBaseAdapter.php.html#a255">255</a></span>)
+ </h4> 
+<h4><i>array</i> <strong>cross_type(
+array
+$platform)</strong></h4>
+	<p>Overridden in child classes as:<br />
+		<dl>
+	<dt><a href="../Prosper/MySqlAdapter.html#methodcross_type">MySqlAdapter::cross_type()</a></dt>
+		<dd></dd>
+	</dl>
+	</p>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Translates a platform specific type into a cross platform type</h5>
+<div class="desc"><p>The inverse of this function is the BaseAdapter::platform_type($type, $length) function</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>array $platform</strong>: The platform specific type array from BaseAdapter::type_array($raw)</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - A cross platform type array created with BaseAdapter::type_array($raw)</li>
+			<li><strong>see</strong> - BaseAdapter::type_array($raw)</li>
+			<li><strong>see</strong> - BaseAdapter::platform_type($type, $length)</li>
+		</ul>
+</div>
+<a name="methoddisconnect" id="methoddisconnect"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method disconnect</strong> (line <span class="linenumber"><a href="../__filesource/fsource_Prosper__adaptersBaseAdapter.php.html#a64">64</a></span>)
+ </h4> 
+<h4><i>void</i> <strong>disconnect(
+)</strong></h4>
+	<p>Overridden in child classes as:<br />
+		<dl>
+	<dt><a href="../Prosper/DBaseAdapter.html#methoddisconnect">DBaseAdapter::disconnect()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/FrontBaseAdapter.html#methoddisconnect">FrontBaseAdapter::disconnect()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/InformixAdapter.html#methoddisconnect">InformixAdapter::disconnect()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/MSqlAdapter.html#methoddisconnect">MSqlAdapter::disconnect()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/MSSqlAdapter.html#methoddisconnect">MSSqlAdapter::disconnect()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/MySqlOldAdapter.html#methoddisconnect">MySqlOldAdapter::disconnect()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/ParadoxAdapter.html#methoddisconnect">ParadoxAdapter::disconnect()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/DB2Adapter.html#methoddisconnect">DB2Adapter::disconnect()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/FirebirdAdapter.html#methoddisconnect">FirebirdAdapter::disconnect()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/IngresAdapter.html#methoddisconnect">IngresAdapter::disconnect()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/MaxDBAdapter.html#methoddisconnect">MaxDBAdapter::disconnect()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/MSSqlNativeAdapter.html#methoddisconnect">MSSqlNativeAdapter::disconnect()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/MySqlAdapter.html#methoddisconnect">MySqlAdapter::disconnect()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/OracleAdapter.html#methoddisconnect">OracleAdapter::disconnect()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/OvrimosAdapter.html#methoddisconnect">OvrimosAdapter::disconnect()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/PostgreSqlAdapter.html#methoddisconnect">PostgreSqlAdapter::disconnect()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/SqliteAdapter.html#methoddisconnect">SqliteAdapter::disconnect()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/SybaseAdapter.html#methoddisconnect">SybaseAdapter::disconnect()</a></dt>
+		<dd></dd>
+	</dl>
+	</p>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Destroy the connection to the database backend</h5>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>abstract</strong> - </li>
+		</ul>
+</div>
+<a name="methodend" id="methodend"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method end</strong> (line <span class="linenumber"><a href="../__filesource/fsource_Prosper__adaptersBaseAdapter.php.html#a142">142</a></span>)
+ </h4> 
+<h4><i>void</i> <strong>end(
+)</strong></h4>
+	<p>Overridden in child classes as:<br />
+		<dl>
+	<dt><a href="../Prosper/FrontBaseAdapter.html#methodend">FrontBaseAdapter::end()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/DB2Adapter.html#methodend">DB2Adapter::end()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/IngresAdapter.html#methodend">IngresAdapter::end()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/MaxDBAdapter.html#methodend">MaxDBAdapter::end()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/MySqlAdapter.html#methodend">MySqlAdapter::end()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/OracleAdapter.html#methodend">OracleAdapter::end()</a></dt>
+		<dd></dd>
+	</dl>
+	</p>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Turns transactions off</h5>
+<div class="desc"><p>If the adapter doesn't support transactions, this is a no-op</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>see</strong> - <a href="../Prosper/BaseAdapter.html#methodrollback">BaseAdapter::rollback()</a></li>
+			<li><strong>see</strong> - BaseAdapeter::commit()</li>
+			<li><strong>see</strong> - <a href="../Prosper/BaseAdapter.html#methodbegin">BaseAdapter::begin()</a></li>
+		</ul>
+</div>
+<a name="methodescape" id="methodescape"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method escape</strong> (line <span class="linenumber"><a href="../__filesource/fsource_Prosper__adaptersBaseAdapter.php.html#a80">80</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>escape(
+string
+$str)</strong></h4>
+	<p>Overridden in child classes as:<br />
+		<dl>
+	<dt><a href="../Prosper/PreparedAdapter.html#methodescape">PreparedAdapter::escape()</a></dt>
+		<dd>Binds a value to a prepared statement and returns the query placeholder</dd>
+	</dl>
+	</p>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Escapes a value, adds slashes and surrounds with single quotes</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $str</strong>: string to escape</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - escaped string or placeholder for prepared statement</li>
+		</ul>
+</div>
+<a name="methodexecute" id="methodexecute"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method execute</strong> (line <span class="linenumber"><a href="../__filesource/fsource_Prosper__adaptersBaseAdapter.php.html#a157">157</a></span>)
+ </h4> 
+<h4><i>mixed</i> <strong>execute(
+string
+$sql, [string
+$mode = Query::SELECT_STMT])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Executes a sql statement, the base implementation drives the query results using</h5>
+<div class="desc"><p>several derivitive functions</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $sql</strong>: statement to execute</li>
+			<li><strong>string $mode</strong>: [optional] statement type, defaults to Query::SELECT_STMT</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - Number of rows affected if update or delete, insert id for insert statements, result set for select</li>
+			<li><strong>see</strong> - BaseAdapter::fetch_assoc($set)</li>
+			<li><strong>see</strong> - BaseAdapter::last_id($set)</li>
+			<li><strong>see</strong> - BaseAdapter::affected_rows($set)</li>
+			<li><strong>see</strong> - BaseAdapter::platform_execute($sql)</li>
+		</ul>
+</div>
+<a name="methodfalse_value" id="methodfalse_value"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method false_value</strong> (line <span class="linenumber"><a href="../__filesource/fsource_Prosper__adaptersBaseAdapter.php.html#a328">328</a></span>)
+ </h4> 
+<h4><i>mixed</i> <strong>false_value(
+)</strong></h4>
+	<p>Overridden in child classes as:<br />
+		<dl>
+	<dt><a href="../Prosper/DBaseAdapter.html#methodfalse_value">DBaseAdapter::false_value()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/MSSqlAdapter.html#methodfalse_value">MSSqlAdapter::false_value()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/MSSqlNativeAdapter.html#methodfalse_value">MSSqlNativeAdapter::false_value()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/MySqlAdapter.html#methodfalse_value">MySqlAdapter::false_value()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/OracleAdapter.html#methodfalse_value">OracleAdapter::false_value()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/SqliteAdapter.html#methodfalse_value">SqliteAdapter::false_value()</a></dt>
+		<dd></dd>
+	</dl>
+	</p>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Platform specific false value</h5>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - false value</li>
+		</ul>
+</div>
+<a name="methodfetch_assoc" id="methodfetch_assoc"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method fetch_assoc</strong> (line <span class="linenumber"><a href="../__filesource/fsource_Prosper__adaptersBaseAdapter.php.html#a225">225</a></span>)
+ </h4> 
+<h4><i>array</i> <strong>fetch_assoc(
+mixed
+$set)</strong></h4>
+	<p>Overridden in child classes as:<br />
+		<dl>
+	<dt><a href="../Prosper/DBaseAdapter.html#methodfetch_assoc">DBaseAdapter::fetch_assoc()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/FrontBaseAdapter.html#methodfetch_assoc">FrontBaseAdapter::fetch_assoc()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/InformixAdapter.html#methodfetch_assoc">InformixAdapter::fetch_assoc()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/MSqlAdapter.html#methodfetch_assoc">MSqlAdapter::fetch_assoc()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/MSSqlAdapter.html#methodfetch_assoc">MSSqlAdapter::fetch_assoc()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/MySqlOldAdapter.html#methodfetch_assoc">MySqlOldAdapter::fetch_assoc()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/ParadoxAdapter.html#methodfetch_assoc">ParadoxAdapter::fetch_assoc()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/DB2Adapter.html#methodfetch_assoc">DB2Adapter::fetch_assoc()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/FirebirdAdapter.html#methodfetch_assoc">FirebirdAdapter::fetch_assoc()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/IngresAdapter.html#methodfetch_assoc">IngresAdapter::fetch_assoc()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/MaxDBAdapter.html#methodfetch_assoc">MaxDBAdapter::fetch_assoc()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/MSSqlNativeAdapter.html#methodfetch_assoc">MSSqlNativeAdapter::fetch_assoc()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/MySqlAdapter.html#methodfetch_assoc">MySqlAdapter::fetch_assoc()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/OracleAdapter.html#methodfetch_assoc">OracleAdapter::fetch_assoc()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/OvrimosAdapter.html#methodfetch_assoc">OvrimosAdapter::fetch_assoc()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/PostgreSqlAdapter.html#methodfetch_assoc">PostgreSqlAdapter::fetch_assoc()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/SqliteAdapter.html#methodfetch_assoc">SqliteAdapter::fetch_assoc()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/SybaseAdapter.html#methodfetch_assoc">SybaseAdapter::fetch_assoc()</a></dt>
+		<dd></dd>
+	</dl>
+	</p>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Retrieve an associative array from a platform specific result set</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>mixed $set</strong>: Platform specific result set</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - row as associative array</li>
+		</ul>
+</div>
+<a name="methodfree_result" id="methodfree_result"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method free_result</strong> (line <span class="linenumber"><a href="../__filesource/fsource_Prosper__adaptersBaseAdapter.php.html#a234">234</a></span>)
+ </h4> 
+<h4><i>nothing</i> <strong>free_result(
+mixed
+$set)</strong></h4>
+	<p>Overridden in child classes as:<br />
+		<dl>
+	<dt><a href="../Prosper/FrontBaseAdapter.html#methodfree_result">FrontBaseAdapter::free_result()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/InformixAdapter.html#methodfree_result">InformixAdapter::free_result()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/MSqlAdapter.html#methodfree_result">MSqlAdapter::free_result()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/MSSqlAdapter.html#methodfree_result">MSSqlAdapter::free_result()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/MySqlOldAdapter.html#methodfree_result">MySqlOldAdapter::free_result()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/DB2Adapter.html#methodfree_result">DB2Adapter::free_result()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/FirebirdAdapter.html#methodfree_result">FirebirdAdapter::free_result()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/IngresAdapter.html#methodfree_result">IngresAdapter::free_result()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/MaxDBAdapter.html#methodfree_result">MaxDBAdapter::free_result()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/MSSqlNativeAdapter.html#methodfree_result">MSSqlNativeAdapter::free_result()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/MySqlAdapter.html#methodfree_result">MySqlAdapter::free_result()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/OracleAdapter.html#methodfree_result">OracleAdapter::free_result()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/OvrimosAdapter.html#methodfree_result">OvrimosAdapter::free_result()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/PostgreSqlAdapter.html#methodfree_result">PostgreSqlAdapter::free_result()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/SqliteAdapter.html#methodfree_result">SqliteAdapter::free_result()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/SybaseAdapter.html#methodfree_result">SybaseAdapter::free_result()</a></dt>
+		<dd></dd>
+	</dl>
+	</p>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Do optional memory cleanup, not necessary but will allow for long running scripts</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>mixed $set</strong>: Platform specific result set</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodhas_transactions" id="methodhas_transactions"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method has_transactions</strong> (line <span class="linenumber"><a href="../__filesource/fsource_Prosper__adaptersBaseAdapter.php.html#a110">110</a></span>)
+ </h4> 
+<h4><i>bool</i> <strong>has_transactions(
+)</strong></h4>
+	<p>Overridden in child classes as:<br />
+		<dl>
+	<dt><a href="../Prosper/FrontBaseAdapter.html#methodhas_transactions">FrontBaseAdapter::has_transactions()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/DB2Adapter.html#methodhas_transactions">DB2Adapter::has_transactions()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/FirebirdAdapter.html#methodhas_transactions">FirebirdAdapter::has_transactions()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/IngresAdapter.html#methodhas_transactions">IngresAdapter::has_transactions()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/MaxDBAdapter.html#methodhas_transactions">MaxDBAdapter::has_transactions()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/MSSqlNativeAdapter.html#methodhas_transactions">MSSqlNativeAdapter::has_transactions()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/MySqlAdapter.html#methodhas_transactions">MySqlAdapter::has_transactions()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/OracleAdapter.html#methodhas_transactions">OracleAdapter::has_transactions()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/OvrimosAdapter.html#methodhas_transactions">OvrimosAdapter::has_transactions()</a></dt>
+		<dd></dd>
+	</dl>
+	</p>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Determine if an adapter supports transactions, defaults to false</h5>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - true if supports transactions, false otherwise</li>
+		</ul>
+</div>
+<a name="methodinsert_id" id="methodinsert_id"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method insert_id</strong> (line <span class="linenumber"><a href="../__filesource/fsource_Prosper__adaptersBaseAdapter.php.html#a216">216</a></span>)
+ </h4> 
+<h4><i>int</i> <strong>insert_id(
+mixed
+$set)</strong></h4>
+	<p>Overridden in child classes as:<br />
+		<dl>
+	<dt><a href="../Prosper/FrontBaseAdapter.html#methodinsert_id">FrontBaseAdapter::insert_id()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/MSSqlAdapter.html#methodinsert_id">MSSqlAdapter::insert_id()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/MySqlOldAdapter.html#methodinsert_id">MySqlOldAdapter::insert_id()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/DB2Adapter.html#methodinsert_id">DB2Adapter::insert_id()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/MaxDBAdapter.html#methodinsert_id">MaxDBAdapter::insert_id()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/MSSqlNativeAdapter.html#methodinsert_id">MSSqlNativeAdapter::insert_id()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/MySqlAdapter.html#methodinsert_id">MySqlAdapter::insert_id()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/PostgreSqlAdapter.html#methodinsert_id">PostgreSqlAdapter::insert_id()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/SqliteAdapter.html#methodinsert_id">SqliteAdapter::insert_id()</a></dt>
+		<dd></dd>
+	</dl>
+	</p>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Retrieve the last insert id for a statement</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>mixed $set</strong>: Platform specific result set</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - inserted id</li>
+		</ul>
+</div>
+<a name="methodlimit" id="methodlimit"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method limit</strong> (line <span class="linenumber"><a href="../__filesource/fsource_Prosper__adaptersBaseAdapter.php.html#a102">102</a></span>)
+ </h4> 
+<h4><i>sql</i> <strong>limit(
+string
+$sql, int
+$limit, int
+$offset)</strong></h4>
+	<p>Overridden in child classes as:<br />
+		<dl>
+	<dt><a href="../Prosper/MSSqlAdapter.html#methodlimit">MSSqlAdapter::limit()</a></dt>
+		<dd>Microsoft T-SQL sucks and can't easily do limit offset like every other  reasonable rdbms, this creates a complex windowing function to do something  that everyone else has built-in.</dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/MSSqlNativeAdapter.html#methodlimit">MSSqlNativeAdapter::limit()</a></dt>
+		<dd>Microsoft T-SQL sucks and can't easily do limit offset like every other  reasonable rdbms, this creates a complex windowing function to do something  that everyone else has built-in.</dd>
+	</dl>
+	</p>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Since various databases support a wide variety of limit syntaxes the  adapter is responsible for writing the limit syntax.</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $sql</strong>: sql statment</li>
+			<li><strong>int $limit</strong>: how many to limit the result to</li>
+			<li><strong>int $offset</strong>: where to start at</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - statement with embedded limit statement</li>
+		</ul>
+</div>
+<a name="methodmktime" id="methodmktime"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method mktime</strong> (line <span class="linenumber"><a href="../__filesource/fsource_Prosper__adaptersBaseAdapter.php.html#a312">312</a></span>)
+ </h4> 
+<h4><i>void</i> <strong>mktime(
+
+$timestamp)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Return unix timestamp from database specific timestamp</h5>
+<div class="desc"><p>Default implementation is the sensible MySQL Timestamp</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $timestamp</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodmodulus" id="methodmodulus"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method modulus</strong> (line <span class="linenumber"><a href="../__filesource/fsource_Prosper__adaptersBaseAdapter.php.html#a338">338</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>modulus(
+string
+$lhs, string
+$rhs)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Platform specific modulus function</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $lhs</strong>: left hand side snippet</li>
+			<li><strong>string $rhs</strong>: right hand side snippet</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - modulus snippet</li>
+		</ul>
+</div>
+<a name="methodplatform_execute" id="methodplatform_execute"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method platform_execute</strong> (line <span class="linenumber"><a href="../__filesource/fsource_Prosper__adaptersBaseAdapter.php.html#a189">189</a></span>)
+ </h4> 
+<h4><i>mixed</i> <strong>platform_execute(
+string
+$sql, string
+$mode)</strong></h4>
+	<p>Overridden in child classes as:<br />
+		<dl>
+	<dt><a href="../Prosper/DBaseAdapter.html#methodplatform_execute">DBaseAdapter::platform_execute()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/FrontBaseAdapter.html#methodplatform_execute">FrontBaseAdapter::platform_execute()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/InformixAdapter.html#methodplatform_execute">InformixAdapter::platform_execute()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/MSqlAdapter.html#methodplatform_execute">MSqlAdapter::platform_execute()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/MSSqlAdapter.html#methodplatform_execute">MSSqlAdapter::platform_execute()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/MySqlOldAdapter.html#methodplatform_execute">MySqlOldAdapter::platform_execute()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/ParadoxAdapter.html#methodplatform_execute">ParadoxAdapter::platform_execute()</a></dt>
+		<dd>This function is experimental, as is the adapter.</dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/PreparedAdapter.html#methodplatform_execute">PreparedAdapter::platform_execute()</a></dt>
+		<dd>Override the Base behavior and dispatch to the correct function based off</dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/IngresAdapter.html#methodplatform_execute">IngresAdapter::platform_execute()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/PostgreSqlAdapter.html#methodplatform_execute">PostgreSqlAdapter::platform_execute()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/SqliteAdapter.html#methodplatform_execute">SqliteAdapter::platform_execute()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/SybaseAdapter.html#methodplatform_execute">SybaseAdapter::platform_execute()</a></dt>
+		<dd></dd>
+	</dl>
+	</p>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Platform specific execution wrapper</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $sql</strong>: SQL to execute</li>
+			<li><strong>string $mode</strong>: Query type</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - Platform specific result set</li>
+		</ul>
+</div>
+<a name="methodplatform_type" id="methodplatform_type"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method platform_type</strong> (line <span class="linenumber"><a href="../__filesource/fsource_Prosper__adaptersBaseAdapter.php.html#a267">267</a></span>)
+ </h4> 
+<h4><i>array</i> <strong>platform_type(
+array
+$cross)</strong></h4>
+	<p>Overridden in child classes as:<br />
+		<dl>
+	<dt><a href="../Prosper/MySqlAdapter.html#methodplatform_type">MySqlAdapter::platform_type()</a></dt>
+		<dd></dd>
+	</dl>
+	</p>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Translates a cross platform type into the best possible platform type</h5>
+<div class="desc"><p>The inverse of this function is the BaseAdapter::cross_type($type, $length) function</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>array $cross</strong>: The cross platform type array from BaseAdapter::type_array($raw)</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - A platform specific type created with BaseAdapter::type_array($raw)</li>
+			<li><strong>see</strong> - BaseAdapter::type_array($raw)</li>
+			<li><strong>see</strong> - BaseAdapter::platform_type($type, $length)</li>
+		</ul>
+</div>
+<a name="methodquote" id="methodquote"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method quote</strong> (line <span class="linenumber"><a href="../__filesource/fsource_Prosper__adaptersBaseAdapter.php.html#a71">71</a></span>)
+ </h4> 
+<h4><i>quoted</i> <strong>quote(
+string
+$str)</strong></h4>
+	<p>Overridden in child classes as:<br />
+		<dl>
+	<dt><a href="../Prosper/MSSqlAdapter.html#methodquote">MSSqlAdapter::quote()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/MSSqlNativeAdapter.html#methodquote">MSSqlNativeAdapter::quote()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/PostgreSqlAdapter.html#methodquote">PostgreSqlAdapter::quote()</a></dt>
+		<dd></dd>
+	</dl>
+	</p>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Quotes a database object, uses the backtick by default</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $str</strong>: string to quote</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - string</li>
+		</ul>
+</div>
+<a name="methodrebind" id="methodrebind"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method rebind</strong> (line <span class="linenumber"><a href="../__filesource/fsource_Prosper__adaptersBaseAdapter.php.html#a207">207</a></span>)
+ </h4> 
+<h4><i>nothing</i> <strong>rebind(
+
+$bindings)</strong></h4>
+	<p>Overridden in child classes as:<br />
+		<dl>
+	<dt><a href="../Prosper/PreparedAdapter.html#methodrebind">PreparedAdapter::rebind()</a></dt>
+		<dd>Used to rebind a statement</dd>
+	</dl>
+	</p>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Used to rebind the query</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $bindings</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodrollback" id="methodrollback"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method rollback</strong> (line <span class="linenumber"><a href="../__filesource/fsource_Prosper__adaptersBaseAdapter.php.html#a131">131</a></span>)
+ </h4> 
+<h4><i>void</i> <strong>rollback(
+)</strong></h4>
+	<p>Overridden in child classes as:<br />
+		<dl>
+	<dt><a href="../Prosper/FrontBaseAdapter.html#methodrollback">FrontBaseAdapter::rollback()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/DB2Adapter.html#methodrollback">DB2Adapter::rollback()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/FirebirdAdapter.html#methodrollback">FirebirdAdapter::rollback()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/IngresAdapter.html#methodrollback">IngresAdapter::rollback()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/MaxDBAdapter.html#methodrollback">MaxDBAdapter::rollback()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/MSSqlNativeAdapter.html#methodrollback">MSSqlNativeAdapter::rollback()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/MySqlAdapter.html#methodrollback">MySqlAdapter::rollback()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/OracleAdapter.html#methodrollback">OracleAdapter::rollback()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/OvrimosAdapter.html#methodrollback">OvrimosAdapter::rollback()</a></dt>
+		<dd></dd>
+	</dl>
+	</p>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Rolls back a transaction, if the adapter doesn't support transactions, this is a no-op</h5>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodtables" id="methodtables"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method tables</strong> (line <span class="linenumber"><a href="../__filesource/fsource_Prosper__adaptersBaseAdapter.php.html#a243">243</a></span>)
+ </h4> 
+<h4><i>array</i> <strong>tables(
+[array
+$filter = null])</strong></h4>
+	<p>Overridden in child classes as:<br />
+		<dl>
+	<dt><a href="../Prosper/MySqlAdapter.html#methodtables">MySqlAdapter::tables()</a></dt>
+		<dd></dd>
+	</dl>
+	</p>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Retrieve table information from the current schema</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>array $filter</strong>: [optional] Filter of table names to return</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - Table data</li>
+		</ul>
+</div>
+<a name="methodtimestamp" id="methodtimestamp"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method timestamp</strong> (line <span class="linenumber"><a href="../__filesource/fsource_Prosper__adaptersBaseAdapter.php.html#a304">304</a></span>)
+ </h4> 
+<h4><i>void</i> <strong>timestamp(
+
+$timestamp)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Return database specific timestamp from unix timestamp</h5>
+<div class="desc"><p>Default implementation is the sensible MySQL Timestamp</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $timestamp</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodtrue_value" id="methodtrue_value"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method true_value</strong> (line <span class="linenumber"><a href="../__filesource/fsource_Prosper__adaptersBaseAdapter.php.html#a320">320</a></span>)
+ </h4> 
+<h4><i>mixed</i> <strong>true_value(
+)</strong></h4>
+	<p>Overridden in child classes as:<br />
+		<dl>
+	<dt><a href="../Prosper/DBaseAdapter.html#methodtrue_value">DBaseAdapter::true_value()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/MSSqlAdapter.html#methodtrue_value">MSSqlAdapter::true_value()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/MSSqlNativeAdapter.html#methodtrue_value">MSSqlNativeAdapter::true_value()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/MySqlAdapter.html#methodtrue_value">MySqlAdapter::true_value()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/OracleAdapter.html#methodtrue_value">OracleAdapter::true_value()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Prosper/SqliteAdapter.html#methodtrue_value">SqliteAdapter::true_value()</a></dt>
+		<dd></dd>
+	</dl>
+	</p>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Platform specific true value</h5>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - truth value</li>
+		</ul>
+</div>
+<a name="methodtype_array" id="methodtype_array"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method type_array</strong> (line <span class="linenumber"><a href="../__filesource/fsource_Prosper__adaptersBaseAdapter.php.html#a285">285</a></span>)
+ </h4> 
+<h4><i>array</i> <strong>type_array(
+string
+$raw, [string
+$split = '('])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Translates a raw data representation to an array of components</h5>
+<div class="desc"><p>Example:  type_array('int(11)')   =&gt; array ( raw    =&gt; 'int(11)',                                     type   =&gt; 'int'    ,                                     length =&gt; 11        )</p><p>type_array('timestamp') =&gt; array ( raw    =&gt; 'timestamp',                                     type   =&gt; 'timestamp',                                     length =&gt; null        )</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $raw</strong>: The raw string with the length</li>
+			<li><strong>string $split</strong>: [optional] The character that indicates a length is coming up, defaults to '('</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - A type array</li>
+		</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage2" ) );</script></div>
+<div class="tab-page" id="iVars">
+<h2 class="tab">Inherited Variables</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iVars" ) );</script>
+<!-- =========== VAR INHERITED SUMMARY =========== -->
+<A NAME='var_inherited_summary'><!-- --></A>
+<h3>Inherited Class Variable Summary</h3>
+
+	</div>
+<div class="tab-page" id="iMethods">
+<h2 class="tab">Inherited Methods</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iMethods" ) );</script>
+<!-- =========== INHERITED METHOD SUMMARY =========== -->
+<A NAME='functions_inherited'><!-- --></A>
+<h3>Inherited Method Summary</h3>
+
+	</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+
+setupAllTabs();
+
+//]]>
+</script>
+	<div id="credit">
+		<hr />
+		Documentation generated on Mon, 01 Mar 2010 14:56:15 -0500 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+	</div>
+</body>
+</html>
