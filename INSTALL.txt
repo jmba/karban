@@ -1,0 +1,11 @@
+KARBAN - simple accounting
+==========================
+
+Installation
+------------
+
+1. Edit the file settings.php to match your server configuration.
+2. Open the file index.php of the install directory in your browser.
+3. After the installation has finished, delete the install directory.
+
+That's it. Have fun!
