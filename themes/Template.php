@@ -35,7 +35,7 @@ class Template {
 	private function parser($template_file, $values='') { 
 		if(is_array($values)) {
 			foreach($values as $key => $value) {
-				$pattern = "/<%%(".strtoupper($key).")%%>/si";
+				$pattern = "/__(".strtoupper($key).")__/si";
 				// Replace values
 				$template_file = preg_replace($pattern, $value, $template_file); 
 			} 
