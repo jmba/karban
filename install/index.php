@@ -7,7 +7,7 @@
  *  _|  _|    _|    _|  _|    _|  _|    _|  _|    _|  _|    _|_|  
  *  _|    _|  _|    _|  _|    _|  _|_|_|    _|    _|  _|      _|
  *
- * This script installs karban on a server (bootstrap) using settings.php from the
+ * This script installs KARBAN on your server (via bootstrap) using settings.php from the
  * root directory. Delete the install folder after the installation is complete.
  */
 
