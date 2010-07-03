@@ -29,9 +29,9 @@ What it does:
 
 It makes use of the following libraries:
 
- 	ihumanable's prosper lib for database communication.
+	ihumanable's prosper lib for database communication.
 	See http://github.com/ihumanable/prosper-lib for more information.
 
- 	Adam Davis' userCake for profile management
+	Adam Davis' userCake for profile management
 	See http://usercake.com for more information.
 
