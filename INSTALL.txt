@@ -1,11 +1,16 @@
-KARBAN - simple accounting
-==========================
+   _|    _|    _|_|    _|_|_|    _|_|_|      _|_|    _|      _|  
+   _|  _|    _|    _|  _|    _|  _|    _|  _|    _|  _|_|    _|  
+   _|_|      _|_|_|_|  _|_|_|    _|_|_|    _|_|_|_|  _|  _|  _|  
+   _|  _|    _|    _|  _|    _|  _|    _|  _|    _|  _|    _|_|  
+   _|    _|  _|    _|  _|    _|  _|_|_|    _|    _|  _|      _|
+ 
+  - An open source accounting and project management software -
 
 Installation
 ------------
 
-1. Edit the file settings.php to match your server configuration.
-2. Open the file index.php of the install directory in your browser.
-3. After the installation has finished, delete the install directory.
+1. Copy the karban directory to your server.
+2. Direct your browser to the karban directory.
+3. Follow the instructions.
 
 That's it. Have fun!

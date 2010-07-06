@@ -3,12 +3,17 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>KARBAN - Setup</title>
-<link rel="shortcut icon" href="../karban_icon.png" type="image/png" />
+<link rel="shortcut icon" href="../themes/karban_icon.png" type="image/png" />
 <link rel="icon" href="../karban_icon.png" type="image/png" />
 <link href="style.css" rel="stylesheet" type="text/css" />
+<script language="javascript" type="text/javascript" src="../themes/inc/jquery.js"></script>
+<script language="javascript" type="text/javascript" src="../themes/inc/jquery.truncator.js"></script>
+<script language="javascript" type="text/javascript">
+    $(function() {
+      $('.truncated').truncate({max_length: 10, more: "more..."});
+    });
+</script>
 </head>
 <body>
-<div class="center"><img alt="karban" src="../karban.png" /><br />
+<div class="center"><img alt="karban" src="../themes/karban.png" /><br />
 <h1>Welcome!</h1>
-You are one step away from a simple project management system that is <em>fun</em> to use.<br />
-<br />

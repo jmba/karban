@@ -12,7 +12,9 @@
 
 This project aims to create a really basic accounting / project tracking system
 for freelancers and small companies that is actually *fun* to use.
-KARBAN is written in PHP 5.3+ with a little jQuery sugar and published under GNU GPL v3. 
+KARBAN is written in PHP 5.3+ plus a little jQuery sugar. 
+
+License: GNU General Public License version 3. 
 See LICENSE.txt for details.
 
 Its main goals are:
@@ -27,11 +29,16 @@ What it does:
 	Track clients
 	Track income and expenses
 
-It makes use of the following libraries:
-
-	ihumanable's prosper lib for database communication.
-	See http://github.com/ihumanable/prosper-lib for more information.
+It makes use of the following projects:
 
 	Adam Davis' userCake for profile management
 	See http://usercake.com for more information.
+	
+	jQuery by John Resig and his team. 
+	http://jquery.org
+	
+	jQuery truncator plugin by Henrik Nyh 
+	http://github.com/henrik/jquery.truncator.js
 
+	Silk icon set 1.3 by Mark James
+	http://www.famfamfam.com/lab/icons/silk/
