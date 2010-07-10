@@ -28,6 +28,7 @@ What it does:
 	Track projects
 	Track clients
 	Track income and expenses
+	Print invoices
 
 It makes use of the following projects:
 

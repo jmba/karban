@@ -15,14 +15,15 @@ include_once("header.html");		// Print a basic html header
 require_once("../settings.php"); 	// Load often used settings and objects
 
 
-// Database setup
+// Check database connection
 try {
 	$db = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME, DB_USER, DB_PASS);
 	echo new Message("Connected to database.", "Well done!", MessageType::SUCCESS);
 } catch(PDOException $e) {
 	echo new Message("Could not connect to database.",
 	"This is normal for the first start. 
-	Please configure karban below <br />(<em>or</em> modify <em>settings.php</em> and reload this page).", 
+	Please configure karban below <br />(for advanced options modify 
+	<em>settings.php</em> and reload this page).", 
 	MessageType::INFO, $e->getMessage(), MoreTextType::DEBUG);
 	require_once(LIB_PATH . "helpers.php");
 	showSetupForm();
