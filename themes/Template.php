@@ -2,8 +2,8 @@
 
 /**
  * The template class offers methods to show page headers, footers and so on.
- * Placeholders (hooks) for variables can be used inside html files.
  * 
+ * Placeholders (hooks) for variables can be used inside html files.
  * For instance consider the following html snippet:
  * <title><%%TITLE%%></title>
  * This placeholder can be used to insert a dynamic site title.

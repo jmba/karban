@@ -11,6 +11,7 @@ abstract class ButtonType {
 
 /**
  * The button class offers methods to show buttons on a page using plain CSS.
+ * Button styles can be defined by custom css files.
  */
 class Button {
 	

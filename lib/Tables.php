@@ -1,7 +1,8 @@
 <?php
 
 /**
- * The Tables class offers methods to interact with the various
+ * The Tables class holds the necessary database queries to 
+ * bootstrap karban and offers methods to interact with the various
  * tables used in karban.
  */
 class Tables {
