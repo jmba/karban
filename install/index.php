@@ -32,7 +32,7 @@ function start($installer) {
 		}		
 	} else {
 		// No connection to database. Ask for credentials.
-		$installer->showSetupForm();	
+		$installer->showSetupForm();
 	}
 }
 
