@@ -1,10 +1,10 @@
-   _|    _|    _|_|    _|_|_|    _|_|_|      _|_|    _|      _|  
-   _|  _|    _|    _|  _|    _|  _|    _|  _|    _|  _|_|    _|  
-   _|_|      _|_|_|_|  _|_|_|    _|_|_|    _|_|_|_|  _|  _|  _|  
-   _|  _|    _|    _|  _|    _|  _|    _|  _|    _|  _|    _|_|  
-   _|    _|  _|    _|  _|    _|  _|_|_|    _|    _|  _|      _|
+      _|    _|    _|_|    _|_|_|    _|_|_|      _|_|    _|      _|  
+      _|  _|    _|    _|  _|    _|  _|    _|  _|    _|  _|_|    _|  
+      _|_|      _|_|_|_|  _|_|_|    _|_|_|    _|_|_|_|  _|  _|  _|  
+      _|  _|    _|    _|  _|    _|  _|    _|  _|    _|  _|    _|_|  
+      _|    _|  _|    _|  _|    _|  _|_|_|    _|    _|  _|      _|
  
-  - An open source accounting and project management software -
+       An open source accounting and project management software
 
 
 // WORK IN PROGRESS. NOT READY FOR USE YET.
@@ -21,27 +21,27 @@ Karban is written in PHP 5.3+ and jQuery.
 Why you should use it
 ---------------------
 
-Compared to Bootcamp it's free and installable on any server.
-It has a strong focus on small teams with one to five members.
-It aims to be similar to freelancerkit but it's open source and snappier to use.
-It will offer instant ajax search on clients and projects and Markdown support.
+- Compared to Bootcamp it's free and installable on any server.
+- It has a strong focus on small teams with one to five members.
+- It aims to be similar to freelancerkit but it's open source and snappier to use.
+- It will offer instant ajax search on clients and projects and Markdown support.
 	
 	
 Main goals
 ----------
 
-Simplicity
-Usability
-Extensible, hackable design
+- Simplicity
+- Usability
+- Extensible, hackable design
 	
 	
 What it does
 ------------
 
-Track projects
-Track clients
-Track income and expenses
-Print invoices
+- Track projects
+- Track clients
+- Track income and expenses
+- Print invoices
 
 
 License
