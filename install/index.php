@@ -23,7 +23,7 @@ function start($installer) {
 	if ($installer->hasConnection()) {
 		if ($installer->isInstalled()) {
 			// Already installed. No work for installer
-				echo new Message("Karban is already installed.",
+			echo new Message("Karban is already installed.",
 				"You have three possibilites:<br />
 				1. If you want to install another copy of karban adjust the <em>settings.php</em> file
 				in the root directory (set new prefix or database name).<br />

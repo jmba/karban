@@ -1,4 +1,11 @@
-![KARBAN](themes/img/karban.png)
+      _|    _|    _|_|    _|_|_|    _|_|_|      _|_|    _|      _|  
+      _|  _|    _|    _|  _|    _|  _|    _|  _|    _|  _|_|    _|  
+      _|_|      _|_|_|_|  _|_|_|    _|_|_|    _|_|_|_|  _|  _|  _|  
+      _|  _|    _|    _|  _|    _|  _|    _|  _|    _|  _|    _|_|  
+      _|    _|  _|    _|  _|    _|  _|_|_|    _|    _|  _|      _|
+ 
+       An open source accounting and project management software
+
 
 // WORK IN PROGRESS. NOT READY FOR USE YET.
 

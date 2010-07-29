@@ -111,6 +111,12 @@ class Installer {
 	}	
 	
 	function install() {
+		if (!$db) {
+			echo new Message("Oops! Something went wrong with the database setup.", 
+				"Please check your configuration and <a href='index.php'>start again</a>", 
+				MessageType::ERROR, "No database connection.");
+			return;
+		}
 		$debugMsg = "Installation started...<br />";
 		if($this->db->query($setupTables->getTable("Groups"))) {
 			$debugMsg .=  DB_PREFIX ."Groups table created...<br />";
