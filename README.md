@@ -1,4 +1,4 @@
-![KARBAN](../themes/img/karban.png)
+![KARBAN](themes/img/karban.png)
 
 // WORK IN PROGRESS. NOT READY FOR USE YET.
 
