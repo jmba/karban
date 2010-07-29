@@ -61,7 +61,7 @@ class Installer {
 		$tableNames = $setupTables->getTables();
 		
 		// Then load tables from database
-		if (!$db) return; // No database object.
+		if (!$db) return; // Error! No database object.
 		$results = $this->db->query("SHOW TABLES");
 		$installedTables = $results->fetchAll(PDO::FETCH_COLUMN);
 		
@@ -69,16 +69,7 @@ class Installer {
 		// we asume that karban is already installed.
 		foreach ($installedTables as $table) {
 			if ( in_array($table, $tableNames)) {
-				echo new Message("Karban is already installed.",
-				"You have three possibilites:<br />
-				1. If you want to install another copy of karban adjust the <em>settings.php</em> file
-				in the root directory (set new prefix or database name).<br />
-				2. If you want reinstall karban remove the tables in the <em>". DB_NAME ."</em> database<br />
-				3. Remove this <em>install</em> directory to prevent accidential reinstall.",
-				 MessageType::WARNING,
-				"The table <strong>". $table . "</strong> was found. It belongs to a karban installation. 
-				A previous installation of karban is present.", MoreTextType::DEBUG);
-				return true;
+				return true; // Karban is installed.
 			}
 		}
 		return false; // Karban is not yet installed.

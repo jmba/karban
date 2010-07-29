@@ -42,7 +42,7 @@ What it does
 - Track clients
 - Track income and expenses
 - Print invoices
-
+- Feed your dog
 
 License
 -------
@@ -56,14 +56,14 @@ Credits
 
 Karban makes use of the following projects:
 
-Adam Davis' userCake for profile management
-See http://usercake.com for more information.
+userCake by Adam Davis for profile management  
+<http://usercake.com>  
 	
-jQuery by John Resig and his team. 
-http://jquery.org
+jQuery by John Resig and his team.  
+<http://jquery.org>  
 	
-jQuery truncator plugin by Henrik Nyh 
-http://github.com/henrik/jquery.truncator.js
+jQuery truncator plugin by Henrik Nyh  
+<http://github.com/henrik/jquery.truncator.js>  
 
-Silk icon set 1.3 by Mark James
-http://www.famfamfam.com/lab/icons/silk/
+Silk icon set 1.3 by Mark James  
+<http://www.famfamfam.com/lab/icons/silk/>  
