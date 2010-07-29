@@ -1,11 +1,4 @@
-      _|    _|    _|_|    _|_|_|    _|_|_|      _|_|    _|      _|  
-      _|  _|    _|    _|  _|    _|  _|    _|  _|    _|  _|_|    _|  
-      _|_|      _|_|_|_|  _|_|_|    _|_|_|    _|_|_|_|  _|  _|  _|  
-      _|  _|    _|    _|  _|    _|  _|    _|  _|    _|  _|    _|_|  
-      _|    _|  _|    _|  _|    _|  _|_|_|    _|    _|  _|      _|
- 
-       An open source accounting and project management software
-
+![KARBAN](../themes/img/karban.png)
 
 // WORK IN PROGRESS. NOT READY FOR USE YET.
 
